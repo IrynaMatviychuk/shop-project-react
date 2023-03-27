@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // задаємо тип props
-type TitleProps = {
+interface ITitleProps {
     name: string
 }
 
 // створення компоненту, який можна використ. багато разів
-const Title = (props: TitleProps) => {
+const Title = (props: ITitleProps) => {
     console.log(props)
     return <h1>Hello {props.name} </h1>
 }
