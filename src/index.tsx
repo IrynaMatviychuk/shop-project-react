@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import List from './List'
+// імпортуємо List
 
 // 1) задаємо тип props
 type TextProps = {
@@ -26,6 +28,7 @@ const App = () => {
         <div className="app">
             <Text name="Iren" text="March" year={2023} />
             <Text name="Valentyn" text="March" year={2023} />
+            <List />
         </div>
     )
 }
