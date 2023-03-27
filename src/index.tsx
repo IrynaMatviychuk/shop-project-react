@@ -9,12 +9,12 @@ type TextProps = {
 }
 
 // 2) створення компоненту, який можна використ. багато разів
-const Text = (props: TextProps) => {
+const Text = ({ name, text, year }: TextProps) => {
     return (
         <>
-            <h1>Hello {props.name}.</h1>
+            <h1>Hello {name}.</h1>
             <p>
-                Now {props.text}, {props.year} year
+                Now {text}, {year} year
             </p>
         </>
     )
