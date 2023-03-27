@@ -1,36 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// створення компоненту
-function Title() {
-    return <h1>Hello TS</h1>
+// задаємо тип props
+type TitleProps = {
+    name: string
 }
 
-// ще один компонент, замість огортаючого div пишемо
-function List() {
-    return (
-        <>
-            <ul>
-                <li>List item 1</li>
-                <li>List item 2</li>
-                <li>List item 3</li>
-            </ul>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus quas quaerat corporis, modi amet ipsum eius cum
-                ducimus reiciendis necessitatibus voluptates eaque quia quos
-                repellendus reprehenderit excepturi, ex eum minus.
-            </p>
-        </>
-    )
+// створення компоненту, який можна використ. багато разів
+const Title = (props: TitleProps) => {
+    console.log(props)
+    return <h1>Hello {props.name} </h1>
 }
 
-// створення кореневого компоненту, в який рендиримо два попередніх компоненти
+// створення кореневого компоненту, в який рендиримо попередні компоненти
 const App = () => {
     return (
         <div className="app">
-            <Title />
-            <List />
+            <Title name="App" />
+            <Title name="React" />
+            <Title name="TS" />
         </div>
     )
 }
@@ -38,8 +26,6 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
-        {/* <Title />
-        <List /> */}
         <App />
     </React.StrictMode>
 )
