@@ -1,28 +1,36 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// задаємо тип props
-interface ITitleProps {
+// 1) задаємо тип props
+type TextProps = {
     name: string
+    text?: string
+    year?: number
 }
 
-// створення компоненту, який можна використ. багато разів
-const Title = (props: ITitleProps) => {
-    console.log(props)
-    return <h1>Hello {props.name} </h1>
+// 2) створення компоненту, який можна використ. багато разів
+const Text = (props: TextProps) => {
+    return (
+        <>
+            <h1>Hello {props.name}.</h1>
+            <p>
+                Now {props.text}, {props.year} year
+            </p>
+        </>
+    )
 }
 
-// створення кореневого компоненту, в який рендиримо попередні компоненти
+// 3) створення кореневого компоненту, в який рендиримо попередні компоненти
 const App = () => {
     return (
         <div className="app">
-            <Title name="App" />
-            <Title name="React" />
-            <Title name="TS" />
+            <Text name="Iren" text="March" year={2023} />
+            <Text name="Valentyn" text="March" year={2023} />
         </div>
     )
 }
 
+// 4) передаэмо кореневий компонент в React.StrictMode
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
