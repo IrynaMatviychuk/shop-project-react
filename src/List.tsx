@@ -1,13 +1,7 @@
-// Підключення компоненту з файла index.tsxs
-// const List = () => {
-//     return <div>List</div>
-// }
-// export default List
-
-// Підключення за допомогою плагіна (tsrafe)
 type Props = {}
 
-const List = (props: Props) => {
+// Іменована форма експорту
+export const List = (props: Props) => {
     return (
         <>
             <ul>
@@ -24,6 +18,3 @@ const List = (props: Props) => {
         </>
     )
 }
-export default List
-
-// якщо ми даний компонент хочемо використати в іншому файлі, то нам потрібно її експортувати. Далі у файлі, в якому хочемо його підключити потрібно провести імпорт: import List from './List'
