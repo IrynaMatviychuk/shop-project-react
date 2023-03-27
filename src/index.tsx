@@ -9,8 +9,7 @@ function Title() {
 // ще один компонент, замість огортаючого div пишемо
 function List() {
     return (
-        <React.Fragment>
-            {/* <div> */}
+        <>
             <ul>
                 <li>List item 1</li>
                 <li>List item 2</li>
@@ -22,8 +21,7 @@ function List() {
                 ducimus reiciendis necessitatibus voluptates eaque quia quos
                 repellendus reprehenderit excepturi, ex eum minus.
             </p>
-            {/* </div> */}
-        </React.Fragment>
+        </>
     )
 }
 
