@@ -5,13 +5,13 @@ import { List } from './List'
 
 // 1) задаємо тип props
 type TextProps = {
-    name: string
+    name?: string
     text?: string
     year?: number
 }
 
 // 2) створення компоненту, який можна використ. багато разів
-const Text = ({ name, text, year }: TextProps) => {
+const Text = ({ name = 'Jack', text, year }: TextProps) => {
     return (
         <>
             <h1>Hello {name}.</h1>
@@ -26,8 +26,8 @@ const Text = ({ name, text, year }: TextProps) => {
 const App = () => {
     return (
         <div className="app">
-            <Text name="Iren" text="March" year={2023} />
-            <Text name="Valentyn" text="March" year={2023} />
+            <Text text="March" year={2023} />
+            <Text text="March" year={2023} />
             <List />
         </div>
     )
